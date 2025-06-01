@@ -194,6 +194,38 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+  <!-- … your existing scripts (jquery, etc.) … -->
+  <script>
+    (function() {
+      // 3a) How far (in px) to scroll before hitting #one
+      var targetSection = document.getElementById("one");
+      if (!targetSection) return;
 
+      // We will measure the Y-offset of "#one"
+      var targetOffsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
+
+      // 3b) Minimum and maximum alpha values
+      var alphaMin = 0.60;   // 60% at very top
+      var alphaMax = 0.95;   // 95% once we've scrolled down to #one
+
+      // 3c) The overlay DIV
+      var overlay = document.getElementById("bg-overlay");
+
+      window.addEventListener("scroll", function() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Compute ratio: 0 at top → 1 when scrollY >= (targetOffsetTop)
+        var ratio = scrollY / targetOffsetTop;
+        if (ratio < 0) ratio = 0;
+        if (ratio > 1) ratio = 1;
+
+        // Linear interpolation between alphaMin and alphaMax
+        var newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
+
+        // Update overlay’s background‐color
+        overlay.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha.toFixed(2) + ")";
+      });
+    })();
+  </script>
 </body>
 </html>
