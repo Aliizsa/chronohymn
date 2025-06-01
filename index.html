@@ -14,12 +14,10 @@
 </head>
 <body class="landing is-preload">
 
-  <!-- 1) Dark overlay that we will tweak in JS -->
-  <div id="bg-overlay"></div>
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
 
-  <!-- Page Wrapper -->
-  <div id="page-wrapper">
-    		<!-- Header -->
+		<!-- Header -->
 		<header id="header" class="alt">
 			<h1>Chronohymn</h1>
 			<p>Echoes of myth<br />
@@ -72,61 +70,58 @@
 
 		<!-- Two -->
 		<section id="two" class="main style2">
-  <div class="container">
-    <header class="major">
-      <h2>Now Streaming – June 9 Release</h2>
-    </header>
-    <div class="row gtr-150">
-      <div class="col-12 col-12-medium">
-        <div class="row gtr-50 aln-center">
-          
-          <!-- Divine Harmony -->
-          <div class="col-4 col-12-medium">
-            <span class="image fit">
-              <img src="images/divineharmony.jpeg" alt="Divine Harmony Cover" />
-            </span>
-            <h3>Divine Harmony</h3>
-            <p>…description…</p>
-            <ul class="actions stacked">
-              <li><a href="#" class="button small">Listen on Spotify</a></li>
-              <li><a href="#" class="button small alt">Watch on YouTube</a></li>
-            </ul>
-          </div>
-          
-          <!-- Týr’s Oath -->
-          <div class="col-4 col-12-medium">
-            <span class="image fit">
-              <img src="images/tyrsoath.jpeg" alt="Týr’s Oath Cover" />
-            </span>
-            <h3>Týr’s Oath</h3>
-            <p>…description…</p>
-            <ul class="actions stacked">
-              <li><a href="#" class="button small">Listen on Spotify</a></li>
-              <li><a href="#" class="button small alt">Watch on YouTube</a></li>
-            </ul>
-          </div>
-          
-          <!-- Solfire -->
-          <div class="col-4 col-12-medium">
-            <span class="image fit">
-              <img src="images/solfire.jpeg" alt="Solfire Cover" />
-            </span>
-            <h3>Solfire</h3>
-            <p>…description…</p>
-            <ul class="actions stacked">
-              <li><a href="#" class="button small">Listen on Spotify</a></li>
-              <li><a href="#" class="button small alt">Watch on YouTube</a></li>
-            </ul>
-          </div>
+			<div class="container">
+				<header class="major">
+					<h2>Now Streaming – June 9 Release</h2>
+				</header>
+				<div class="row gtr-150">
+					<div class="col-12 col-12-medium">
+						<div class="row gtr-50 aln-center">
+							<!-- Divine Harmony -->
+							<div class="col-4 col-12-medium">
+								<span class="image fit">
+									<img src="images/DivineHarmony.jpeg" alt="Divine Harmony Cover" />
+								</span>
+								<h3>Divine Harmony</h3>
+								<p>A sacred anthem honoring the shared truths of pantheons, this track weaves unity and resonance into every beat—where all paths rise in song.</p>
+								<ul class="actions stacked">
+									<li><a href="#" class="button small">Listen on Spotify</a></li>
+									<li><a href="#" class="button small alt">Watch on YouTube</a></li>
+								</ul>
+							</div>
 
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+							<!-- Tyr's Oath -->
+							<div class="col-4 col-12-medium">
+								<span class="image fit">
+									<img src="images/TyrsOath.jpeg" alt="Týr’s Oath Cover" />
+								</span>
+								<h3>Týr’s Oath</h3>
+								<p>A battle hymn forged in divine justice—this anthem calls protectors to stand for truth, uphold honor, and shield the innocent under sacred law.</p>
+								<ul class="actions stacked">
+									<li><a href="#" class="button small">Listen on Spotify</a></li>
+									<li><a href="#" class="button small alt">Watch on YouTube</a></li>
+								</ul>
+							</div>
+
+							<!-- Solfire -->
+							<div class="col-4 col-12-medium">
+								<span class="image fit">
+									<img src="images/Solfire.jpeg" alt="Solfire Cover" />
+								</span>
+								<h3>Solfire</h3>
+								<p>Rising with the summer sun, Solfire is a heartbeat of flame—a ritual track driven by primal rhythm, fierce energy, and solstice magic in motion.</p>
+								<ul class="actions stacked">
+									<li><a href="#" class="button small">Listen on Spotify</a></li>
+									<li><a href="#" class="button small alt">Watch on YouTube</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<!-- Three --
-	  
 		<section id="three" class="wrapper style3 special">
 			<div class="inner">
 				<header class="major">
@@ -197,38 +192,6 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-  <!-- … your existing scripts (jquery, etc.) … -->
-  <script>
-    (function() {
-      // 3a) How far (in px) to scroll before hitting #one
-      var targetSection = document.getElementById("one");
-      if (!targetSection) return;
 
-      // We will measure the Y-offset of "#one"
-      var targetOffsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
-
-      // 3b) Minimum and maximum alpha values
-      var alphaMin = 0.60;   // 60% at very top
-      var alphaMax = 0.95;   // 95% once we've scrolled down to #one
-
-      // 3c) The overlay DIV
-      var overlay = document.getElementById("bg-overlay");
-
-      window.addEventListener("scroll", function() {
-        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-
-        // Compute ratio: 0 at top → 1 when scrollY >= (targetOffsetTop)
-        var ratio = scrollY / targetOffsetTop;
-        if (ratio < 0) ratio = 0;
-        if (ratio > 1) ratio = 1;
-
-        // Linear interpolation between alphaMin and alphaMax
-        var newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
-
-        // Update overlay’s background‐color
-        overlay.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha.toFixed(2) + ")";
-      });
-    })();
-  </script>
 </body>
 </html>
