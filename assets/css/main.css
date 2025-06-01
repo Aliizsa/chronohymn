@@ -65,13 +65,17 @@ table {
 body {
 	-webkit-text-size-adjust: none;
 	/* Use your Chronohymn logo as the page background: */
-	background-image: url("../../images/ChronohymnLOGO.jpeg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-attachment: fixed;
-	color: #fff;
+	body {
+  -webkit-text-size-adjust: none;
+
+  /* Layer a semi‐transparent black gradient on top of the logo: */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../images/ChronohymnLOGO.jpeg") center center / cover fixed;
+
+  color: #fff;
 }
+
 
 mark {
 	background-color: transparent;
