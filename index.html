@@ -27,16 +27,36 @@
 		.image.fit {
 			text-align: center;
 		}
+
+		/* Override Spectral’s preload overlay so it shows the logo instead of a solid grey */
+		body.is-preload #bg-overlay {
+			/* Full-screen, fixed positioning */
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 10000;
+
+			/* Replace the grey with your logo */
+			background: #000 url('images/ChronohymnLOGO.jpeg') no-repeat center center;
+			background-size: contain;
+		}
+
+		/* Hide the main page-wrapper until preload is removed */
+		body.is-preload #page-wrapper {
+			display: none;
+		}
 	</style>
 </head>
 <body class="landing is-preload">
 
-  <!-- 1) Dark overlay that we will tweak in JS -->
-  <div id="bg-overlay"></div>
+	<!-- 1) Preload overlay: now shows Chronohymn logo -->
+	<div id="bg-overlay"></div>
 
-  <!-- Page Wrapper -->
-  <div id="page-wrapper">
-    		<!-- Header -->
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+		<!-- Header -->
 		<header id="header" class="alt">
 			<h1>Chronohymn</h1>
 			<nav id="nav">
@@ -169,38 +189,37 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-  <!-- … your existing scripts (jquery, etc.) … -->
-  <script>
-    (function() {
-      // 3a) How far (in px) to scroll before hitting #one
-      var targetSection = document.getElementById("one");
-      if (!targetSection) return;
+	<script>
+		(function() {
+			// 3a) How far (in px) to scroll before hitting #one
+			var targetSection = document.getElementById("one");
+			if (!targetSection) return;
 
-      // We will measure the Y-offset of "#one"
-      var targetOffsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
+			// We will measure the Y-offset of "#one"
+			var targetOffsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
 
-      // 3b) Minimum and maximum alpha values
-      var alphaMin = 0.60;   // 60% at very top
-      var alphaMax = 0.95;   // 95% once we've scrolled down to #one
+			// 3b) Minimum and maximum alpha values
+			var alphaMin = 0.60;   // 60% at very top
+			var alphaMax = 0.95;   // 95% once we've scrolled down to #one
 
-      // 3c) The overlay DIV
-      var overlay = document.getElementById("bg-overlay");
+			// 3c) The overlay DIV
+			var overlay = document.getElementById("bg-overlay");
 
-      window.addEventListener("scroll", function() {
-        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+			window.addEventListener("scroll", function() {
+				var scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Compute ratio: 0 at top → 1 when scrollY >= (targetOffsetTop)
-        var ratio = scrollY / targetOffsetTop;
-        if (ratio < 0) ratio = 0;
-        if (ratio > 1) ratio = 1;
+				// Compute ratio: 0 at top → 1 when scrollY >= (targetOffsetTop)
+				var ratio = scrollY / targetOffsetTop;
+				if (ratio < 0) ratio = 0;
+				if (ratio > 1) ratio = 1;
 
-        // Linear interpolation between alphaMin and alphaMax
-        var newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
+				// Linear interpolation between alphaMin and alphaMax
+				var newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
 
-        // Update overlay’s background‐color
-        overlay.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha.toFixed(2) + ")";
-      });
-    })();
-  </script>
+				// Update overlay’s background‐color (remain transparent after preload)
+				overlay.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha.toFixed(2) + ")";
+			});
+		})();
+	</script>
 </body>
 </html>
