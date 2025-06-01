@@ -1150,6 +1150,16 @@ body.is-mobile #main > header {
   pointer-events: none; /* mouse clicks pass through */
   transition: background-color 0.1s linear; /* smooth updates */
 }
+/* ====== Shrink album‐cover images ====== */
+
+/* Give each cover a max‐height (or max‐width) so it never blows out of its column */
+.image.fit img {
+  width: auto;          /* stop forcing 100% width */
+  max-width: 100%;      /* but never blow past its parent’s width */
+  max-height: 300px;    /* ↳ adjust this value until it looks right—300px is a good starting point */
+  display: block;       /* center‐friendly */
+  margin: 0 auto;       /* horizontally center in its column */
+}
 
 /*────────────────────────────────────────────────────────────────────────────*/
 /*  LANDING (completely removed the banner override so that your ChronohymnLOGO remains visible) */
