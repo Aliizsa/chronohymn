@@ -52,8 +52,15 @@ table {
 }
 
 body {
-	-webkit-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  background-image: url('../../images/ChronohymnLOGO.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
 }
+
 
 mark {
 	background-color: transparent;
