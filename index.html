@@ -11,6 +11,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<!-- Custom styles for album cover sizing -->
+	<style>
+		/* Adjust these values (width/height) as needed */
+		.album-cover {
+			width: 300px;
+			height: 300px;
+			object-fit: cover;
+			display: block;
+			margin: 0 auto;
+		}
+
+		/* Center the image within its container */
+		.image.fit {
+			text-align: center;
+		}
+	</style>
 </head>
 <body class="landing is-preload">
 
@@ -79,7 +96,11 @@
 							<!-- Divine Harmony -->
 							<div class="col-4 col-12-medium">
 								<span class="image fit">
-									<img src="images/divineharmony.jpeg" alt="Divine Harmony Cover" />
+									<img
+										src="images/divineharmony.jpeg"
+										alt="Divine Harmony Cover"
+										class="album-cover"
+									/>
 								</span>
 								<h3>Divine Harmony</h3>
 								<p>A sacred anthem honoring the shared truths of pantheons, this track weaves unity and resonance into every beat—where all paths rise in song.</p>
@@ -89,10 +110,14 @@
 								</ul>
 							</div>
 
-							<!-- Tyr's Oath -->
+							<!-- Týr’s Oath -->
 							<div class="col-4 col-12-medium">
 								<span class="image fit">
-									<img src="images/tyrsoath.jpeg" alt="Týr’s Oath Cover" />
+									<img
+										src="images/tyrsoath.jpeg"
+										alt="Týr’s Oath Cover"
+										class="album-cover"
+									/>
 								</span>
 								<h3>Týr’s Oath</h3>
 								<p>A battle hymn forged in divine justice—this anthem calls protectors to stand for truth, uphold honor, and shield the innocent under sacred law.</p>
@@ -105,7 +130,11 @@
 							<!-- Solfire -->
 							<div class="col-4 col-12-medium">
 								<span class="image fit">
-									<img src="images/solfire.jpeg" alt="Solfire Cover" />
+									<img
+										src="images/solfire.jpeg"
+										alt="Solfire Cover"
+										class="album-cover"
+									/>
 								</span>
 								<h3>Solfire</h3>
 								<p>Rising with the summer sun, Solfire is a heartbeat of flame—a ritual track driven by primal rhythm, fierce energy, and solstice magic in motion.</p>
@@ -117,57 +146,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-
-		<!-- Three --
-		<section id="three" class="wrapper style3 special">
-			<div class="inner">
-				<header class="major">
-					<h2>Accumsan mus tortor nunc aliquet</h2>
-					<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-					fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
-				</header>
-				<ul class="features">
-					<li class="icon fa-paper-plane">
-						<h3>Arcu accumsan</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon solid fa-laptop">
-						<h3>Ac Augue Eget</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon solid fa-code">
-						<h3>Mus Scelerisque</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon solid fa-headphones-alt">
-						<h3>Mauris Imperdiet</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon fa-heart">
-						<h3>Aenean Primis</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-					<li class="icon fa-flag">
-						<h3>Tortor Ut</h3>
-						<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-					</li>
-				</ul>
-			</div>
-		</section>
-
-		<!-- CTA --
-		<section id="cta" class="wrapper style4">
-			<div class="inner">
-				<header>
-					<h2>Arcue ut vel commodo</h2>
-					<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
-				</header>
-				<ul class="actions stacked">
-					<li><a href="#" class="button fit primary">Activate</a></li>
-					<li><a href="#" class="button fit">Learn More</a></li>
-				</ul>
 			</div>
 		</section>
 
