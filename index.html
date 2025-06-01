@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-	<!-- Custom styles for album cover sizing -->
+	<!-- Custom styles for album cover sizing and preload background -->
 	<style>
 		/* Adjust these values (width/height) as needed */
 		.album-cover {
@@ -28,30 +28,16 @@
 			text-align: center;
 		}
 
-		/* Override Spectral’s preload overlay so it shows the logo instead of a solid grey */
-		body.is-preload #bg-overlay {
-			/* Full-screen, fixed positioning */
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 10000;
-
-			/* Replace the grey with your logo */
-			background: #000 url('images/ChronohymnLOGO.jpeg') no-repeat center center;
-			background-size: contain;
-		}
-
-		/* Hide the main page-wrapper until preload is removed */
-		body.is-preload #page-wrapper {
-			display: none;
+		/* Replace the solid‐gray preload with the Chronohymn logo, full‐screen centered */
+		body.is-preload {
+			background: #000 url('images/chronohymnlogo.jpeg') no-repeat center center;
+			background-size: cover;
 		}
 	</style>
 </head>
 <body class="landing is-preload">
 
-	<!-- 1) Preload overlay: now shows Chronohymn logo -->
+	<!-- 1) Dark overlay used for scroll‐fade (unchanged) -->
 	<div id="bg-overlay"></div>
 
 	<!-- Page Wrapper -->
@@ -178,7 +164,6 @@
 				<li><a href="mailto:Chronohymn@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 			</ul>
 		</footer>
-
 	</div> <!-- /#page-wrapper -->
 
 	<!-- Scripts -->
@@ -216,7 +201,7 @@
 				// Linear interpolation between alphaMin and alphaMax
 				var newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
 
-				// Update overlay’s background‐color (remain transparent after preload)
+				// Update overlay’s background‐color
 				overlay.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha.toFixed(2) + ")";
 			});
 		})();
