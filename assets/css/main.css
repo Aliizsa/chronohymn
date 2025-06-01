@@ -1132,6 +1132,24 @@ body.is-mobile #main > header {
 		padding: 3em 2em 1em 2em;
 	}
 }
+/* 2a) Force #page-wrapper above the overlay */
+#page-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* 2b) The full‐screen black overlay, starting at 60% opacity */
+#bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.60); /* initial alpha = 0.60 */
+  z-index: 0; /* sits between body‐background (z-index:—) and #page-wrapper (z-index:1) */
+  pointer-events: none; /* mouse clicks pass through */
+  transition: background-color 0.1s linear; /* smooth updates */
+}
 
 /*────────────────────────────────────────────────────────────────────────────*/
 /*  LANDING (completely removed the banner override so that your ChronohymnLOGO remains visible) */
