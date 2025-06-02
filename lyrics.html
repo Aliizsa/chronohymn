@@ -12,24 +12,57 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<style>
-		/* Center and constrain lyrics text for readability */
-		.lyrics-container {
-			margin: 0 auto;
-			max-width: 800px;
+		/* Space between each track section */
+		.track-section {
+			margin-bottom: 4em;
+			padding-bottom: 2em;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		/* Left column: cover art and info */
+		.track-info {
 			text-align: center;
 		}
-		.track-lyrics {
-			margin-bottom: 4em;
+		.track-info img {
+			width: 100%;
+			max-width: 300px;
+			height: auto;
+			border-radius: 4px;
+			margin-bottom: 1em;
 		}
-		.track-lyrics h3 {
-			margin-bottom: 0.5em;
+		.track-info p {
+			margin: 0.5em 0;
+			font-size: 0.9em;
+			color: rgba(255, 255, 255, 0.8);
 		}
+
+		/* Right column: lyrics styling */
 		.track-lyrics pre {
 			white-space: pre-wrap;
-			text-align: left;
 			background: rgba(255, 255, 255, 0.1);
 			padding: 1.5em;
 			border-radius: 4px;
+			text-align: left;
+			font-family: inherit;
+			font-size: 1em;
+			line-height: 1.5em;
+		}
+		.track-lyrics h3 {
+			margin-bottom: 0.5em;
+			text-align: left;
+		}
+
+		/* Adjust columns on narrower screens */
+		@media screen and (max-width: 736px) {
+			.track-section .col-4,
+			.track-section .col-8 {
+				width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+			.track-section {
+				margin-bottom: 2em;
+			}
 		}
 	</style>
 </head>
@@ -67,10 +100,17 @@
 		</section>
 
 		<section id="lyrics" class="main style1">
-			<div class="container lyrics-container">
-				<div class="track-lyrics">
-					<h3>Divine Harmony</h3>
-					<pre>
+			<div class="container">
+				<!-- Divine Harmony Section -->
+				<div class="row gtr-50 track-section">
+					<div class="col-4 col-12-medium track-info">
+						<img src="images/divineharmony.jpeg" alt="Divine Harmony Cover" />
+						<p><strong>Release Date:</strong> June 9, 2025</p>
+						<p><strong>About:</strong> A sacred anthem honoring the shared truths of pantheons—unity and resonance in every beat.</p>
+					</div>
+					<div class="col-8 col-12-medium track-lyrics">
+						<h3>Divine Harmony</h3>
+						<pre>
 [Verse 1]
 Whispered words across the flame,
 Echoes call each sacred name.
@@ -100,12 +140,20 @@ Divine Harmony, sing to me
 Ancient voices rising free.
 Through the ages, let it be
 One in spirit, one with Thee.
-					</pre>
+						</pre>
+					</div>
 				</div>
 
-				<div class="track-lyrics">
-					<h3>Týr’s Oath</h3>
-					<pre>
+				<!-- Týr’s Oath Section -->
+				<div class="row gtr-50 track-section">
+					<div class="col-4 col-12-medium track-info">
+						<img src="images/tyrsoath.jpeg" alt="Týr’s Oath Cover" />
+						<p><strong>Release Date:</strong> June 9, 2025</p>
+						<p><strong>About:</strong> A battle hymn forged in divine justice—protectors rising to uphold honor and shield the innocent.</p>
+					</div>
+					<div class="col-8 col-12-medium track-lyrics">
+						<h3>Týr’s Oath</h3>
+						<pre>
 [Intro]
 By the steel and by the oath,
 We stand beneath the hallowed growth.
@@ -139,12 +187,20 @@ I pledge my heart to Týr’s call,
 To rise and never, never fall.
 In the name of law and truth,
 I swear my oath for ages youth.
-					</pre>
+						</pre>
+					</div>
 				</div>
 
-				<div class="track-lyrics">
-					<h3>Solfire</h3>
-					<pre>
+				<!-- Solfire Section -->
+				<div class="row gtr-50 track-section">
+					<div class="col-4 col-12-medium track-info">
+						<img src="images/solfire.jpeg" alt="Solfire Cover" />
+						<p><strong>Release Date:</strong> June 9, 2025</p>
+						<p><strong>About:</strong> Rising with the summer sun, Solfire is a heartbeat of flame—primal rhythm, fierce energy, and solstice magic.</p>
+					</div>
+					<div class="col-8 col-12-medium track-lyrics">
+						<h3>Solfire</h3>
+						<pre>
 [Opening Chant]
 Sun above, flame below,
 We honor you in ember’s glow.
@@ -184,7 +240,8 @@ Sunset fades, the embers die,
 Yet within, the flame’s reply.
 In our blood, the fire remains,
 Solfire lives in hallowed veins.
-					</pre>
+						</pre>
+					</div>
 				</div>
 			</div>
 		</section>
