@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+	<title>Chronohymn – Contact</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+		/* Center container and constrain width */
+		.contact-container {
+			margin: 0 auto;
+			max-width: 800px;
+			text-align: center;
+		}
+		/* Simple form styling */
+		.contact-form {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			margin-top: 2em;
+		}
+		.contact-form input,
+		.contact-form textarea {
+			width: 100%;
+			padding: 0.75em;
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: 4px;
+			background: rgba(255, 255, 255, 0.05);
+			color: #fff;
+			resize: vertical;
+			font-family: inherit;
+		}
+		.contact-form input::placeholder,
+		.contact-form textarea::placeholder {
+			color: rgba(255, 255, 255, 0.6);
+		}
+		.contact-form button {
+			align-self: center;
+			padding: 0.75em 2em;
+		}
+		/* Social icons row under contact details */
+		.social-links {
+			margin-top: 1em;
+		}
+		.social-links li {
+			display: inline-block;
+			margin: 0 0.5em;
+		}
+	</style>
+</head>
+<body class="is-preload">
+
+	<!-- Preload overlay -->
+	<div id="bg-overlay"></div>
+
+	<div id="page-wrapper">
+		<header id="header" class="alt">
+			<h1>Chronohymn</h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="music.html">Music</a></li>
+					<li><a href="videos.html">Videos</a></li>
+					<li><a href="lyrics.html">Lyrics</a></li>
+					<li><a href="events.html">Events</a></li>
+					<li><a href="shop.html">Shop</a></li>
+					<li class="active"><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="banner">
+			<div class="inner">
+				<h2>Contact</h2>
+				<p>We’d love to hear from you.</p>
+				<ul class="actions special">
+					<li><a href="#content" class="button primary">Get In Touch</a></li>
+				</ul>
+			</div>
+			<a href="#content" class="more scrolly">↓</a>
+		</section>
+
+		<section id="content" class="main style1">
+			<div class="container contact-container">
+				<header class="major">
+					<h2>Reach Out to Chronohymn</h2>
+				</header>
+				<p>
+					For business inquiries (bookings, licensing, collaborations), please email us at:
+				</p>
+				<p>
+					<a href="mailto:Chronohymn@gmail.com" style="color: #fff; text-decoration: underline;">Chronohymn@gmail.com</a>
+				</p>
+				<p>
+					For general messages, feedback, or just to say hello, feel free to send us a DM on social media:
+				</p>
+				<ul class="social-links">
+					<li><a href="https://www.instagram.com/Chronohymn" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="https://www.facebook.com/Chronohymn" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="https://www.youtube.com/@Chronohymn" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+				</ul>
+
+				<hr />
+
+				<header class="major">
+					<h2>Send Us a Message</h2>
+				</header>
+				<p>
+					If you prefer to use a form, you can leave a message below. We’ll get back to you as soon as we can.
+				</p>
+				<form 
+					class="contact-form" 
+					action="https://formspree.io/f/yourFormID" 
+					method="POST"
+					novalidate
+				>
+					<input type="text" name="name" placeholder="Your Name" required />
+					<input type="email" name="email" placeholder="Your Email" required />
+					<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+					<button type="submit" class="button primary">Send Message</button>
+				</form>
+			</div>
+		</section>
+
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="https://www.instagram.com/Chronohymn" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://www.facebook.com/Chronohymn" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="https://www.youtube.com/@Chronohymn" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+				<li><a href="mailto:Chronohymn@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+		</footer>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script>
+		(function() {
+			var targetSection = document.getElementById("content");
+			if (!targetSection) return;
+			var targetOffsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
+			var alphaMin = 0.60;
+			var alphaMax = 0.95;
+			var overlay = document.getElementById("bg-overlay");
+
+			window.addEventListener("scroll", function() {
+				var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+				var ratio = scrollY / targetOffsetTop;
+				if (ratio < 0) ratio = 0;
+				if (ratio > 1) ratio = 1;
+				var newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
+				overlay.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha.toFixed(2) + ")";
+			});
+		})();
+	</script>
+</body>
+</html>
