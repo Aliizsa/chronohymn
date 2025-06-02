@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+	<title>Chronohymn – Shop</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+	<!-- Preload overlay unchanged -->
+	<div id="bg-overlay"></div>
+
+	<div id="page-wrapper">
+		<header id="header" class="alt">
+			<h1>Chronohymn</h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="music.html">Music</a></li>
+					<li><a href="media.html">Videos</a></li>
+					<li><a href="lyrics.html">Lyrics</a></li>
+					<li><a href="events.html">Events</a></li>
+					<li class="active"><a href="shop.html">Shop</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="banner">
+			<div class="inner">
+				<h2>Shop</h2>
+				<p>Coming Soon</p>
+				<ul class="actions special">
+					<li><a href="#content" class="button primary">Learn More</a></li>
+				</ul>
+			</div>
+			<a href="#content" class="more scrolly">↓</a>
+		</section>
+
+		<section id="content" class="main style1">
+			<div class="container">
+				<div class="row gtr-50">
+					<div class="col-8 col-12-medium" style="margin: 0 auto; text-align: center;">
+						<header class="major">
+							<h2>Our Shop Is On Its Way</h2>
+						</header>
+						<p>
+							Chronohymn merchandise and digital downloads will be available soon. 
+							Stay tuned for exclusive offerings—prints, apparel, and music bundles designed 
+							to bring the spirit of our ancestral hymns into your everyday life.
+						</p>
+						<p>
+							Follow us on social media for the latest updates on our shop launch.
+						</p>
+						<ul class="actions special" style="margin-top: 2em;">
+							<li><a href="https://www.instagram.com/Chronohymn" class="button primary">Follow on Instagram</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="https://www.instagram.com/Chronohymn" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://www.facebook.com/Chronohymn" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="https://www.youtube.com/@Chronohymn" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+				<li><a href="mailto:Chronohymn@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+		</footer>
+	</div>
+
+	<!-- Scripts unchanged -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script>
+		(function() {
+			var targetSection = document.getElementById("content");
+			if (!targetSection) return;
+			var targetOffsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
+			var alphaMin = 0.60;
+			var alphaMax = 0.95;
+			var overlay = document.getElementById("bg-overlay");
+
+			window.addEventListener("scroll", function() {
+				var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+				var ratio = scrollY / targetOffsetTop;
+				if (ratio < 0) ratio = 0;
+				if (ratio > 1) ratio = 1;
+				var newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
+				overlay.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha.toFixed(2) + ")";
+			});
+		})();
+	</script>
+</body>
+</html>
