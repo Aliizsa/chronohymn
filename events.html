@@ -9,13 +9,16 @@
 	<title>Chronohymn – Events</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+	<!-- Spectral’s main stylesheet -->
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<!-- FullCalendar CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+	<!-- FullCalendar CSS (for your calendar) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" />
+
 	<style>
-		/* Hero box styling */
+		/* Hero box styling (unchanged) */
 		#hero {
 			position: relative;
 			width: 100%;
@@ -64,7 +67,7 @@
 			border-radius: 4px;
 		}
 
-		/* Events & Quote styling */
+		/* Events & Quote styling (unchanged) */
 		#events-quotes {
 			display: flex;
 			flex-wrap: wrap;
@@ -93,7 +96,7 @@
 			font-size: 1.1rem;
 		}
 
-		/* Responsive adjustments */
+		/* Responsive adjustments (unchanged) */
 		@media screen and (max-width: 736px) {
 			#hero .hero-content h1 {
 				font-size: 2rem;
@@ -108,8 +111,7 @@
 	</style>
 </head>
 <body class="is-preload">
-
-	<!-- Preload overlay unchanged -->
+	<!-- 1) PRELOAD OVERLAY - KEEP THIS AT THE VERY TOP -->
 	<div id="bg-overlay"></div>
 
 	<div id="page-wrapper">
@@ -129,7 +131,7 @@
 			</nav>
 		</header>
 
-		<!-- Hero Section with Custom Image -->
+		<!-- HERO SECTION (Unchanged) -->
 		<section id="hero">
 			<div class="overlay"></div>
 			<div class="hero-content">
@@ -142,18 +144,18 @@
 			</div>
 		</section>
 
-		<!-- Calendar Section (FullCalendar + ical.js) -->
+		<!-- CALENDAR SECTION (Unchanged) -->
 		<section id="calendar-section" class="main style2">
 			<div class="container">
 				<header class="major">
 					<h2>Holiday &amp; Moon Phase Calendar</h2>
-					<p>Important things this Month</p>
+					<p>Major lunar phases plus key pagan Sabbats—auto-updating.</p>
 				</header>
 				<div id="calendar"></div>
 			</div>
 		</section>
 
-		<!-- Events List & Monthly Quote -->
+		<!-- EVENTS & QUOTE LIST (Unchanged) -->
 		<section id="events-quotes-container" class="main style1">
 			<div class="container">
 				<div id="events-quotes">
@@ -161,10 +163,10 @@
 					<div id="events-list">
 						<h3>This Month’s Events</h3>
 						<ul>
-							<li><strong>June 1 2025:</strong> Full Moon Esbat (Strawberry Moon)</li>
-							<li><strong>June 9 2025:</strong> Chronohymn Debut Release</li>
-							<li><strong>June 21 2025:</strong> Summer Solstice (Litha)</li>
-							<!-- Manually update as needed each month -->
+							<li><strong>June 1, 2025:</strong> Full Moon Esbat (Strawberry Moon)</li>
+							<li><strong>June 9, 2025:</strong> Chronohymn Debut Release</li>
+							<li><strong>June 21, 2025:</strong> Summer Solstice (Litha)</li>
+							<!-- Manually update as needed -->
 						</ul>
 					</div>
 
@@ -187,7 +189,7 @@
 		</footer>
 	</div>
 
-	<!-- Libraries -->
+	<!-- ******** SPECTRAL & OTHER SCRIPTS ******** -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -195,106 +197,61 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<!-- ^ Spectral’s main.js automatically removes "is-preload" on window.load -->
 
-	<!-- FullCalendar & ical.js -->
+	<!-- FULLCALENDAR & ICAL.JS -->
 	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/ical.js@1.4.0/build/ical.min.js"></script>
-
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
-			// 1. ICS source for Full Moon phases from PanderMusubi GitHub
-			const fullMoonIcsUrl = 'https://raw.githubusercontent.com/PanderMusubi/lunar-phase-calendar/master/GB/en/full-moon.ics';
+			// 1. Full Moon ICS (from PanderMusubi GitHub)
+			const fullMoonIcsUrl = 
+			  'https://raw.githubusercontent.com/PanderMusubi/lunar-phase-calendar/master/GB/en/full-moon.ics';
 
 			// 2. Manual Sabbat events for 2025
 			const sabbatEvents = [
-				{
-					title: 'Imbolc',
-					start: '2025-02-02',
-					allDay: true,
-					color: '#FFB347',
-					extendedProps: { description: 'Imbolc: Festival of Brigid, marking the early stirrings of spring.' }
-				},
-				{
-					title: 'Ostara (Spring Equinox)',
-					start: '2025-03-20',
-					allDay: true,
-					color: '#B0E57C',
-					extendedProps: { description: 'Ostara: Celebrating balance and renewal at the spring equinox.' }
-				},
-				{
-					title: 'Beltane',
-					start: '2025-05-01',
-					allDay: true,
-					color: '#FF69B4',
-					extendedProps: { description: 'Beltane: A fire festival honoring fertility, passion, and growth.' }
-				},
-				{
-					title: 'Litha (Summer Solstice)',
-					start: '2025-06-21',
-					allDay: true,
-					color: '#FFD700',
-					extendedProps: { description: 'Litha: Midsummer celebration of the sun at its zenith.' }
-				},
-				{
-					title: 'Lughnasadh',
-					start: '2025-08-01',
-					allDay: true,
-					color: '#FF8C00',
-					extendedProps: { description: 'Lughnasadh: First harvest festival, honoring grain and abundance.' }
-				},
-				{
-					title: 'Mabon (Autumn Equinox)',
-					start: '2025-09-22',
-					allDay: true,
-					color: '#D2691E',
-					extendedProps: { description: 'Mabon: Celebrating the second harvest and balance of light and dark.' }
-				},
-				{
-					title: 'Samhain',
-					start: '2025-10-31',
-					allDay: true,
-					color: '#8B0000',
-					extendedProps: { description: 'Samhain: Honoring ancestors and the thinning veil between worlds.' }
-				},
-				{
-					title: 'Yule (Winter Solstice)',
-					start: '2025-12-21',
-					allDay: true,
-					color: '#00CED1',
-					extendedProps: { description: 'Yule: Festival of the rebirth of the sun at winter solstice.' }
-				}
+				{ title: 'Imbolc', start: '2025-02-02', allDay: true, color: '#FFB347',
+				  extendedProps: { description: 'Imbolc: Festival of Brigid, marking early spring.' } },
+				{ title: 'Ostara (Spring Equinox)', start: '2025-03-20', allDay: true, color: '#B0E57C',
+				  extendedProps: { description: 'Ostara: Celebrating balance and renewal.' } },
+				{ title: 'Beltane', start: '2025-05-01', allDay: true, color: '#FF69B4',
+				  extendedProps: { description: 'Beltane: Fire festival honoring fertility.' } },
+				{ title: 'Litha (Summer Solstice)', start: '2025-06-21', allDay: true, color: '#FFD700',
+				  extendedProps: { description: 'Litha: Midsummer celebration of the sun.' } },
+				{ title: 'Lughnasadh', start: '2025-08-01', allDay: true, color: '#FF8C00',
+				  extendedProps: { description: 'Lughnasadh: First harvest festival.' } },
+				{ title: 'Mabon (Autumn Equinox)', start: '2025-09-22', allDay: true, color: '#D2691E',
+				  extendedProps: { description: 'Mabon: Celebrating second harvest.' } },
+				{ title: 'Samhain', start: '2025-10-31', allDay: true, color: '#8B0000',
+				  extendedProps: { description: 'Samhain: Honoring ancestors and the veil.' } },
+				{ title: 'Yule (Winter Solstice)', start: '2025-12-21', allDay: true, color: '#00CED1',
+				  extendedProps: { description: 'Yule: Festival of the sun’s rebirth.' } }
 			];
 
-			// 3. Fetch Full Moon ICS and parse via ical.js
+			// 3. Fetch & parse Full Moon ICS
 			fetch(fullMoonIcsUrl)
 				.then(response => {
 					if (!response.ok) throw new Error('Failed to fetch full-moon ICS.');
 					return response.text();
 				})
 				.then(icsText => {
-					// Parse ICS to jCal format
 					const jcalData = ICAL.parse(icsText);
 					const vcalendar = new ICAL.Component(jcalData);
 					const vevents = vcalendar.getAllSubcomponents('vevent');
 
-					// Convert each VEVENT to FullCalendar event
 					const fullMoonEvents = vevents.map(vevent => {
 						const eventObj = new ICAL.Event(vevent);
 						return {
 							title: eventObj.summary,
 							start: eventObj.startDate.toString(),
 							allDay: eventObj.startDate.isDate,
-							extendedProps: {
-								description: eventObj.description || ''
-							},
-							color: '#FFFFFF50' // semi-transparent white for full moons
+							extendedProps: { description: eventObj.description || '' },
+							color: '#FFFFFF50'
 						};
 					});
 
-					// Merge all events: full moons + sabbats
 					const allEvents = fullMoonEvents.concat(sabbatEvents);
 
-					// 4. Initialize FullCalendar
 					const calendarEl = document.getElementById('calendar');
 					const calendar = new FullCalendar.Calendar(calendarEl, {
 						initialView: 'dayGridMonth',
@@ -306,13 +263,8 @@
 							right: 'dayGridMonth,timeGridWeek,timeGridDay'
 						},
 						events: allEvents,
-						eventTimeFormat: {
-							hour: '2-digit',
-							minute: '2-digit',
-							hour12: false
-						},
+						eventTimeFormat: { hour: '2-digit', minute: '2-digit', hour12: false },
 						eventMouseEnter: function(info) {
-							// Show tooltip if a description exists
 							const desc = info.event.extendedProps.description;
 							if (desc) {
 								const tooltip = document.createElement('div');
@@ -332,7 +284,7 @@
 					document.getElementById('calendar').innerHTML = '<p>Unable to load calendar.</p>';
 				});
 
-			// 5. Monthly Quote Rotation
+			// 4. Monthly Quote Rotation
 			const quotesByMonth = {
 				0:  "“From the ashes of yesterday, new songs will rise.”",
 				1:  "“The heart of spring beats loudest in the circle of our song.”",
