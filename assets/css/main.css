@@ -1236,11 +1236,3 @@ body.is-mobile.landing #footer {
   list-style: none;
   margin: 1em 0;
 }
-
-/* Optional: if you prefer using margin instead of gap */
-.social-links li {
-  margin-bottom: 1em;
-}
-.social-links li:last-child {
-  margin-bottom: 0;
-}
