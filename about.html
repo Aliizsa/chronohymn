@@ -5,15 +5,20 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+<head>
+	<title>Chronohymn – About</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-<body class="landing is-preload">
+<body class="is-preload">
 
-	<!-- 1) Dark overlay used for scroll‐fade (unchanged) -->
+	<!-- Preload overlay -->
 	<div id="bg-overlay"></div>
 
-	<!-- Page Wrapper -->
 	<div id="page-wrapper">
-		<!-- Header -->
+		<!-- Header with hamburger‐style menu -->
 		<header id="header" class="alt">
 			<h1>Chronohymn</h1>
 			<nav id="nav">
@@ -23,14 +28,13 @@
 						<div id="menu">
 							<ul>
 								<li><a href="index.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
+								<li class="active"><a href="about.html">About</a></li>
 								<li><a href="music.html">Music</a></li>
 								<li><a href="videos.html">Videos</a></li>
 								<li><a href="lyrics.html">Lyrics</a></li>
 								<li><a href="events.html">Events</a></li>
 								<li><a href="shop.html">Shop</a></li>
 								<li><a href="contact.html">Contact</a></li>
-								
 							</ul>
 						</div>
 					</li>
@@ -38,7 +42,7 @@
 			</nav>
 		</header>
 
-
+		<!-- Banner -->
 		<section id="banner">
 			<div class="inner">
 				<h2>About Chronohymn</h2>
@@ -80,95 +84,6 @@
 							<h2>Inspiration &amp; Mission</h2>
 						</header>
 						<p>
-							The idea for Chronohymn took shape the moment I discovered AI-generated music. Suddenly, the deeply held emotions—my reflections, feelings, and ancestral longings—could be given form. Through AI, those inner stirrings transform into melodies carrying the weight of generations. Chronohymn is a bridge between past and present: hymns that transcend time, weaving together tradition and innovation.
-						</p>
-						<ul class="feature-list" style="list-style-position: inside; display: inline-block; text-align: left; margin-top: 1em;">
-							<li><strong>Ancestral Resonance:</strong> Each track channels different facets of pagan life—gods and goddesses, parables and myths, seasonal rites, and meaningful lessons passed down through generations.</li>
-							<li><strong>Community Connection:</strong> These songs invite pagans and seekers alike to gather, reflect, and celebrate the diversity of our path—whether honoring a deity, retelling a myth, or simply embracing the shared spirit of our beliefs.</li>
-							<li><strong>Innovative Tradition:</strong> By blending rich, symbolic lyrics with AI-driven composition, Chronohymn creates a new form of sacred music—one where technology amplifies, rather than replaces, our bond with the old ways.</li>
-						</ul>
+							The idea for Chronohymn took shape the moment I discovered AI-generated music. Suddenly, the deeply held emotions—my reflections, feelings, and ancestral longings—could be given form. Through AI, those inner stirr
 
-						<hr />
-
-						<header class="major">
-							<h2>Where to Listen</h2>
-						</header>
-						<p>
-							Discover the debut tracks that carry ancestral voices into the modern world: “Divine Harmony,” “Týr’s Oath,” and “Solfire.” Available on all major streaming platforms:
-						</p>
-						<ul class="actions" style="justify-content: center;">
-							<li><a href="#" class="button">Spotify</a></li>
-							<li><a href="#" class="button">YouTube</a></li>
-							<li><a href="#" class="button">Other Platforms</a></li>
-						</ul>
-						<p>
-							Follow Chronohymn on social media for updates on new releases, behind-the-scenes glimpses, and insights into the creative process. May these songs guide you on your own journey—connecting you to the wisdom of those who came before.
-						</p>
-
-						<hr />
-
-						<p>
-							Thank you for joining this musical pilgrimage. May Chronohymn’s voices awaken your spirit and inspire your own celebrations of earth, story, and mystery.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Footer unchanged -->
-		<footer id="footer">
-  <ul class="icons social-links">
-    <li>
-      <a href="https://www.instagram.com/Chronohymn" target="_blank" rel="noopener">
-        <img src="images/instagram-icon.png" alt="Instagram">
-      </a>
-    </li>
-    <li>
-      <a href="https://www.facebook.com/Chronohymn" target="_blank" rel="noopener">
-        <img src="images/facebook-icon.png" alt="Facebook">
-      </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/@Chronohymn" target="_blank" rel="noopener">
-        <img src="images/youtube-icon.png" alt="YouTube">
-      </a>
-    </li>
-    <li>
-      <a href="mailto:Chronohymn@gmail.com">
-        <img src="images/email-icon.png" alt="Email">
-      </a>
-    </li>
-  </ul>
-</footer>
-
-	</div>
-
-	<!-- Scripts unchanged -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script>
-		(function() {
-			var targetSection = document.getElementById("content");
-			if (!targetSection) return;
-			var targetOffsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
-			var alphaMin = 0.60;
-			var alphaMax = 0.95;
-			var overlay = document.getElementById("bg-overlay");
-
-			window.addEventListener("scroll", function() {
-				var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-				var ratio = scrollY / targetOffsetTop;
-				if (ratio < 0) ratio = 0;
-				if (ratio > 1) ratio = 1;
-				var newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
-				overlay.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha.toFixed(2) + ")";
-			});
-		})();
-	</script>
-</body>
-</html>
+						
