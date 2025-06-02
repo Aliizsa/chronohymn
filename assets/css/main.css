@@ -1228,15 +1228,13 @@ body.is-mobile.landing #footer {
 	filter: none;          /* full brightness on hover */
 	transform: scale(1.1); /* gentle zoom‐in effect */
 }
-/* … your existing .social-links rules … */
 .social-links {
-  display: flex;
-  flex-direction: column;    /* stack icons vertically */
-  align-items: center;       /* center them horizontally */
-  gap: 1em;                  /* vertical space between each icon */
+  display: flex;                /* default flex‐direction: row */
+  justify-content: center;      /* center icons horizontally */
+  gap: 1.5em;                   /* spacing between each icon */
   padding: 0;
   list-style: none;
-  margin: 1em 0;             /* keep whatever vertical margin you like around the list */
+  margin: 1em 0;
 }
 
 /* Optional: if you prefer using margin instead of gap */
