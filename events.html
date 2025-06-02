@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+	<title>Chronohymn – Events</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!-- FullCalendar CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<style>
+		/* Hero box styling */
+		#hero {
+			position: relative;
+			width: 100%;
+			height: 60vh;
+			min-height: 300px;
+			background: url('images/debuttriplecard.JPEG') no-repeat center center;
+			background-size: cover;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#hero .overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		#hero .hero-content {
+			position: relative;
+			color: #fff;
+			text-align: center;
+			z-index: 2;
+		}
+		#hero .hero-content h1 {
+			font-size: 2.5rem;
+			margin-bottom: 0.5rem;
+		}
+		#hero .hero-content p {
+			font-size: 1.2rem;
+		}
+		#hero .hero-buttons .button {
+			margin-top: 1rem;
+		}
+
+		/* Calendar container */
+		#calendar-section {
+			padding: 3em 0;
+		}
+		#calendar {
+			max-width: 900px;
+			margin: 0 auto;
+			background: rgba(255, 255, 255, 0.05);
+			padding: 1em;
+			border-radius: 4px;
+		}
+
+		/* Events & Quote styling */
+		#events-quotes {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 2em;
+			margin-top: 2em;
+		}
+		#events-list, #monthly-quote {
+			flex: 1 1 300px;
+			background: rgba(255, 255, 255, 0.05);
+			padding: 1.5em;
+			border-radius: 4px;
+		}
+		#events-list h3, #monthly-quote h3 {
+			margin-top: 0;
+		}
+		#events-list ul {
+			list-style: disc inside;
+			padding-left: 1em;
+		}
+		#monthly-quote {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			font-style: italic;
+			font-size: 1.1rem;
+		}
+
+		/* Responsive adjustments */
+		@media screen and (max-width: 736px) {
+			#hero .hero-content h1 {
+				font-size: 2rem;
+			}
+			#hero .hero-content p {
+				font-size: 1rem;
+			}
+			#events-quotes {
+				flex-direction: column;
+			}
+		}
+	</style>
+</head>
+<body class="is-preload">
+
+	<!-- Preload overlay unchanged -->
+	<div id="bg-overlay"></div>
+
+	<div id="page-wrapper">
+		<header id="header" class="alt">
+			<h1>Chronohymn</h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="music.html">Music</a></li>
+					<li><a href="media.html">Videos</a></li>
+					<li><a href="lyrics.html">Lyrics</a></li>
+					<li class="active"><a href="events.html">Events</a></li>
+					<li><a href="shop.html">Shop</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Hero Section with Custom Image -->
+		<section id="hero">
+			<div class="overlay"></div>
+			<div class="hero-content">
+				<h1>Chronohymn Debut Release</h1>
+				<p>June 9 2025 – <em>Divine Harmony</em>, <em>Týr’s Oath</em>, <em>Solfire</em></p>
+				<ul class="actions hero-buttons">
+					<li><a href="#" class="button primary">Pre-save on Spotify</a></li>
+					<li><a href="#" class="button">Set Reminder</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Calendar Section (FullCalendar + ical.js) -->
+		<section id="calendar-section" class="main style2">
+			<div class="container">
+				<header class="major">
+					<h2>Holiday &amp; Moon Phase Calendar</h2>
+					<p>Major lunar phases plus key pagan Sabbats—auto-updating.</p>
+				</header>
+				<div id="calendar"></div>
+			</div>
+		</section>
+
+		<!-- Events List & Monthly Quote -->
+		<section id="events-quotes-container" class="main style1">
+			<div class="container">
+				<div id="events-quotes">
+					<!-- This Month’s Events -->
+					<div id="events-list">
+						<h3>This Month’s Events</h3>
+						<ul>
+							<li><strong>June 1 2025:</strong> Full Moon Esbat (Strawberry Moon)</li>
+							<li><strong>June 9 2025:</strong> Chronohymn Debut Release</li>
+							<li><strong>June 21 2025:</strong> Summer Solstice (Litha)</li>
+							<!-- Manually update as needed each month -->
+						</ul>
+					</div>
+
+					<!-- Monthly Philosophical Quote -->
+					<div id="monthly-quote">
+						<h3>Monthly Reflection</h3>
+						<p id="quote-text">Loading quote...</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="https://www.instagram.com/Chronohymn" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://www.facebook.com/Chronohymn" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="https://www.youtube.com/@Chronohymn" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+				<li><a href="mailto:Chronohymn@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+		</footer>
+	</div>
+
+	<!-- Libraries -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<!-- FullCalendar & ical.js -->
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/ical.js@1.4.0/build/ical.min.js"></script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// 1. ICS source for Full Moon phases from PanderMusubi GitHub
+			const fullMoonIcsUrl = 'https://raw.githubusercontent.com/PanderMusubi/lunar-phase-calendar/master/GB/en/full-moon.ics';
+
+			// 2. Manual Sabbat events for 2025
+			const sabbatEvents = [
+				{
+					title: 'Imbolc',
+					start: '2025-02-02',
+					allDay: true,
+					color: '#FFB347',
+					extendedProps: { description: 'Imbolc: Festival of Brigid, marking the early stirrings of spring.' }
+				},
+				{
+					title: 'Ostara (Spring Equinox)',
+					start: '2025-03-20',
+					allDay: true,
+					color: '#B0E57C',
+					extendedProps: { description: 'Ostara: Celebrating balance and renewal at the spring equinox.' }
+				},
+				{
+					title: 'Beltane',
+					start: '2025-05-01',
+					allDay: true,
+					color: '#FF69B4',
+					extendedProps: { description: 'Beltane: A fire festival honoring fertility, passion, and growth.' }
+				},
+				{
+					title: 'Litha (Summer Solstice)',
+					start: '2025-06-21',
+					allDay: true,
+					color: '#FFD700',
+					extendedProps: { description: 'Litha: Midsummer celebration of the sun at its zenith.' }
+				},
+				{
+					title: 'Lughnasadh',
+					start: '2025-08-01',
+					allDay: true,
+					color: '#FF8C00',
+					extendedProps: { description: 'Lughnasadh: First harvest festival, honoring grain and abundance.' }
+				},
+				{
+					title: 'Mabon (Autumn Equinox)',
+					start: '2025-09-22',
+					allDay: true,
+					color: '#D2691E',
+					extendedProps: { description: 'Mabon: Celebrating the second harvest and balance of light and dark.' }
+				},
+				{
+					title: 'Samhain',
+					start: '2025-10-31',
+					allDay: true,
+					color: '#8B0000',
+					extendedProps: { description: 'Samhain: Honoring ancestors and the thinning veil between worlds.' }
+				},
+				{
+					title: 'Yule (Winter Solstice)',
+					start: '2025-12-21',
+					allDay: true,
+					color: '#00CED1',
+					extendedProps: { description: 'Yule: Festival of the rebirth of the sun at winter solstice.' }
+				}
+			];
+
+			// 3. Fetch Full Moon ICS and parse via ical.js
+			fetch(fullMoonIcsUrl)
+				.then(response => {
+					if (!response.ok) throw new Error('Failed to fetch full-moon ICS.');
+					return response.text();
+				})
+				.then(icsText => {
+					// Parse ICS to jCal format
+					const jcalData = ICAL.parse(icsText);
+					const vcalendar = new ICAL.Component(jcalData);
+					const vevents = vcalendar.getAllSubcomponents('vevent');
+
+					// Convert each VEVENT to FullCalendar event
+					const fullMoonEvents = vevents.map(vevent => {
+						const eventObj = new ICAL.Event(vevent);
+						return {
+							title: eventObj.summary,
+							start: eventObj.startDate.toString(),
+							allDay: eventObj.startDate.isDate,
+							extendedProps: {
+								description: eventObj.description || ''
+							},
+							color: '#FFFFFF50' // semi-transparent white for full moons
+						};
+					});
+
+					// Merge all events: full moons + sabbats
+					const allEvents = fullMoonEvents.concat(sabbatEvents);
+
+					// 4. Initialize FullCalendar
+					const calendarEl = document.getElementById('calendar');
+					const calendar = new FullCalendar.Calendar(calendarEl, {
+						initialView: 'dayGridMonth',
+						height: 'auto',
+						themeSystem: 'standard',
+						headerToolbar: {
+							left: 'prev,next today',
+							center: 'title',
+							right: 'dayGridMonth,timeGridWeek,timeGridDay'
+						},
+						events: allEvents,
+						eventTimeFormat: {
+							hour: '2-digit',
+							minute: '2-digit',
+							hour12: false
+						},
+						eventMouseEnter: function(info) {
+							// Show tooltip if a description exists
+							const desc = info.event.extendedProps.description;
+							if (desc) {
+								const tooltip = document.createElement('div');
+								tooltip.className = 'fc-tooltip';
+								tooltip.innerText = desc;
+								document.body.appendChild(tooltip);
+								tooltip.style.left = info.jsEvent.pageX + 10 + 'px';
+								tooltip.style.top = info.jsEvent.pageY + 10 + 'px';
+								info.el.addEventListener('mouseleave', () => tooltip.remove());
+							}
+						}
+					});
+					calendar.render();
+				})
+				.catch(err => {
+					console.error('Error loading ICS:', err);
+					document.getElementById('calendar').innerHTML = '<p>Unable to load calendar.</p>';
+				});
+
+			// 5. Monthly Quote Rotation
+			const quotesByMonth = {
+				0:  "“From the ashes of yesterday, new songs will rise.”",
+				1:  "“The heart of spring beats loudest in the circle of our song.”",
+				2:  "“Blossoms fade, but our devotion remains unwavering.”",
+				3:  "“May the fire of Beltane kindle your passion and your path.”",
+				4:  "“In the glow of midsummer, we find our inner strength.”",
+				5:  "“The longest day reminds us to embrace every ray of hope.”",
+				6:  "“Under Lughnasadh’s light, we honor the harvest of our efforts.”",
+				7:  "“Shadows lengthen as we reflect on what binds us to the earth.”",
+				8:  "“In Samhain’s whisper, we remember those who guide us beyond.”",
+				9:  "“Embers glow even when the veil grows thin.”",
+				10: "“Honoring Ancestors: their stories illuminate our way forward.”",
+				11: "“From winter’s stillness, new promise will awaken.”"
+			};
+			const now = new Date();
+			const currentQuote = quotesByMonth[now.getMonth()] ||
+			                    "“In every season, there is a song waiting to be sung.”";
+			document.getElementById('quote-text').innerText = currentQuote;
+		});
+	</script>
+</body>
+</html>
