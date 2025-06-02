@@ -12,28 +12,29 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-	<!-- Custom styles for album cover sizing and preload background -->
 	<style>
-		/* Adjust these values (width/height) as needed */
-		.album-cover {
-			width: 300px;
-			height: 300px;
-			object-fit: cover;
-			display: block;
-			margin: 0 auto;
-		}
+    /* Adjust these values (width/height) as needed */
+    .album-cover {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+    }
 
-		/* Center the image within its container */
-		.image.fit {
-			text-align: center;
-		}
+    /* Center the image within its container */
+    .image.fit {
+        text-align: center;
+    }
 
-		/* Replace the solid‐gray preload with the Chronohymn logo, full‐screen centered */
-		body.is-preload {
-			background: #000 url('images/chronohymnlogo.jpeg') no-repeat center center;
-			background-size: cover;
-		}
-	</style>
+    /* Replace the solid‐gray preload with the Chronohymn logo, full‐screen centered */
+    body.is-preload {
+        background: #000 url('images/chronohymnlogo.jpeg') no-repeat center center;
+        background-size: cover;
+    }
+</style>
+
 </head>
 <body class="landing is-preload">
 
