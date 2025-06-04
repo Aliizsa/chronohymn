@@ -6,136 +6,181 @@
 -->
 <html>
 <head>
-	<title>Chronohymn – Contact</title>
+	<title>Chronohymn – Events</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<!-- FullCalendar CSS (for your calendar) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" />
+
 	<style>
-		/* Center container and constrain width */
-		.contact-container {
-			margin: 0 auto;
-			max-width: 800px;
-			text-align: center;
-		}
-		/* (Form styles have been left intact in case you need them elsewhere) */
-		.contact-form {
+		/* Hero box styling (unchanged) */
+		#hero {
+			position: relative;
+			width: 100%;
+			height: 60vh;
+			min-height: 300px;
+			background: url('images/debuttriplecard.JPEG') no-repeat center center;
+			background-size: cover;
 			display: flex;
-			flex-direction: column;
-			gap: 1em;
+			align-items: center;
+			justify-content: center;
+		}
+		#hero .overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		#hero .hero-content {
+			position: relative;
+			color: #fff;
+			text-align: center;
+			z-index: 2;
+		}
+		#hero .hero-content h1 {
+			font-size: 2.5rem;
+			margin-bottom: 0.5rem;
+		}
+		#hero .hero-content p {
+			font-size: 1.2rem;
+		}
+		#hero .hero-buttons .button {
+			margin-top: 1rem;
+		}
+
+		/* Calendar container */
+		#calendar-section {
+			padding: 3em 0;
+		}
+		#calendar {
+			max-width: 900px;
+			margin: 0 auto;
+			background: rgba(255, 255, 255, 0.05);
+			padding: 1em;
+			border-radius: 4px;
+		}
+
+		/* Events & Quote styling (unchanged) */
+		#events-quotes {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 2em;
 			margin-top: 2em;
 		}
-		.contact-form input,
-		.contact-form textarea {
-			width: 100%;
-			padding: 0.75em;
-			border: 1px solid rgba(255, 255, 255, 0.2);
-			border-radius: 4px;
+		#events-list, #monthly-quote {
+			flex: 1 1 300px;
 			background: rgba(255, 255, 255, 0.05);
-			color: #fff;
-			resize: vertical;
-			font-family: inherit;
+			padding: 1.5em;
+			border-radius: 4px;
 		}
-		.contact-form input::placeholder,
-		.contact-form textarea::placeholder {
-			color: rgba(255, 255, 255, 0.6);
+		#events-list h3, #monthly-quote h3 {
+			margin-top: 0;
 		}
-		.contact-form button {
-			align-self: center;
-			padding: 0.75em 2em;
+		#events-list ul {
+			list-style: disc inside;
+			padding-left: 1em;
 		}
-		/* Social icons row under contact details */
-		.social-links {
-			margin-top: 1em;
+		#monthly-quote {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			font-style: italic;
+			font-size: 1.1rem;
 		}
-		.social-links li {
-			display: inline-block;
-			margin: 0 0.5em;
+
+		/* Responsive adjustments (unchanged) */
+		@media screen and (max-width: 736px) {
+			#hero .hero-content h1 {
+				font-size: 2rem;
+			}
+			#hero .hero-content p {
+				font-size: 1rem;
+			}
+			#events-quotes {
+				flex-direction: column;
+			}
 		}
 	</style>
 </head>
 <body class="is-preload">
-
-	<!-- Preload overlay -->
 	<div id="bg-overlay"></div>
 
 	<div id="page-wrapper">
 		<header id="header" class="alt">
-  <h1>Chronohymn</h1>
-  <nav id="nav">
-    <ul>
-      <li class="special">
-        <a href="#menu" class="menuToggle"><span>Menu</span></a>
-        <div id="menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li"><a href="music.html">Music</a></li>
-	    <li><a href="listen.html">Listen</a></li>
-            <li><a href="videos.html">Videos</a></li>
-            <li><a href="lyrics.html">Lyrics</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li class="active"><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </nav>
-</header>
+			<h1>Chronohymn</h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="music.html">Music</a></li>
+								<li><a href="listen.html">Listen</a></li>
+								<li><a href="videos.html">Videos</a></li>
+								<li><a href="lyrics.html">Lyrics</a></li>
+								<li class="active"><a href="events.html">Events</a></li>
+								<li><a href="shop.html">Shop</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-
-		<section id="banner">
-			<div class="inner">
-				<h2>Contact</h2>
-				<p>We’d love to hear from you.</p>
-				<ul class="actions special">
-					<li><a href="#content" class="button primary">Get In Touch</a></li>
+		<!-- HERO SECTION -->
+		<section id="hero">
+			<div class="overlay"></div>
+			<div class="hero-content">
+				<h1>Chronohymn Debut Release</h1>
+				<p>June 9 2025 – <em>Divine Harmony</em>, <em>Týr’s Oath</em>, <em>Solfire</em></p>
+				<ul class="actions hero-buttons">
+					<li><a href="#" class="button primary">Pre-save on Spotify</a></li>
+					<li><a href="#" class="button">Set Reminder</a></li>
 				</ul>
 			</div>
-			<a href="#content" class="more scrolly">↓</a>
 		</section>
 
-		<section id="content" class="main style1">
-			<div class="container contact-container">
+		<!-- CALENDAR SECTION -->
+		<section id="calendar-section" class="main style2">
+			<div class="container">
 				<header class="major">
-					<h2>Reach Out to Chronohymn</h2>
+					<h2>Holiday &amp; Moon Phase Calendar</h2>
+					<p>Major lunar phases plus key pagan Sabbats.</p>
 				</header>
-				<p>
-					For business inquiries (bookings, licensing, collaborations), please email us at:
-				</p>
-				<p>
-					<a href="mailto:Chronohymn@gmail.com" style="color: #fff; text-decoration: underline;">
-						Chronohymn@gmail.com
-					</a>
-				</p>
-				<p>
-					For general messages, feedback, or just to say hello, feel free to send us a DM on social media:
-				</p>
-				<ul class="social-links">
-					<li>
-						<a href="https://www.instagram.com/Chronohymn" class="icon brands fa-instagram">
-							<span class="label">Instagram</span>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.facebook.com/Chronohymn" class="icon brands fa-facebook-f">
-							<span class="label">Facebook</span>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.youtube.com/@Chronohymn" class="icon brands fa-youtube">
-							<span class="label">YouTube</span>
-						</a>
-					</li>
-					<li>
-						<a href="mailto:Chronohymn@gmail.com" class="icon solid fa-envelope">
-							<span class="label">Email</span>
-						</a>
-					</li>
-				</ul>
+				<div id="calendar"></div>
+			</div>
+		</section>
 
-				<!-- Removed the <hr>, “Send Us a Message” header, paragraph, and form entirely -->
+		<!-- EVENTS & QUOTE LIST -->
+		<section id="events-quotes-container" class="main style1">
+			<div class="container">
+				<div id="events-quotes">
+					<!-- This Month’s Events -->
+					<div id="events-list">
+						<h3>This Month’s Events</h3>
+						<ul>
+							<li><strong>June 1, 2025:</strong> Full Moon Esbat (Strawberry Moon)</li>
+							<li><strong>June 9, 2025:</strong> Chronohymn Debut Release</li>
+							<li><strong>June 21, 2025:</strong> Summer Solstice (Litha)</li>
+						</ul>
+					</div>
+
+					<!-- Monthly Philosophical Quote -->
+					<div id="monthly-quote">
+						<h3>Monthly Reflection</h3>
+						<p id="quote-text">Loading quote...</p>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -173,21 +218,129 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<!-- Spectral’s main.js automatically removes "is-preload" on window.load -->
+
+	<!-- FULLCALENDAR & ICAL.JS -->
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/ical.js@1.4.0/build/ical.min.js"></script>
 	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// 1. Full Moon ICS (from PanderMusubi GitHub)
+			const fullMoonIcsUrl =
+			  'https://raw.githubusercontent.com/PanderMusubi/lunar-phase-calendar/master/GB/en/full-moon.ics';
+
+			// 2. Manual Sabbat events for 2025
+			const sabbatEvents = [
+				{ title: 'Imbolc', start: '2025-02-02', allDay: true, color: '#FFB347',
+				  extendedProps: { description: 'Imbolc: Festival of Brigid, marking early spring.' } },
+				{ title: 'Ostara (Spring Equinox)', start: '2025-03-20', allDay: true, color: '#B0E57C',
+				  extendedProps: { description: 'Ostara: Celebrating balance and renewal.' } },
+				{ title: 'Beltane', start: '2025-05-01', allDay: true, color: '#FF69B4',
+				  extendedProps: { description: 'Beltane: Fire festival honoring fertility.' } },
+				{ title: 'Litha (Summer Solstice)', start: '2025-06-21', allDay: true, color: '#FFD700',
+				  extendedProps: { description: 'Litha: Midsummer celebration of the sun.' } },
+				{ title: 'Lughnasadh', start: '2025-08-01', allDay: true, color: '#FF8C00',
+				  extendedProps: { description: 'Lughnasadh: First harvest festival.' } },
+				{ title: 'Mabon (Autumn Equinox)', start: '2025-09-22', allDay: true, color: '#D2691E',
+				  extendedProps: { description: 'Mabon: Celebrating second harvest.' } },
+				{ title: 'Samhain', start: '2025-10-31', allDay: true, color: '#8B0000',
+				  extendedProps: { description: 'Samhain: Honoring ancestors and the veil.' } },
+				{ title: 'Yule (Winter Solstice)', start: '2025-12-21', allDay: true, color: '#00CED1',
+				  extendedProps: { description: 'Yule: Festival of the sun’s rebirth.' } }
+			];
+
+			// 3. Fetch & parse Full Moon ICS
+			fetch(fullMoonIcsUrl)
+				.then(response => {
+					if (!response.ok) throw new Error('Failed to fetch full-moon ICS.');
+					return response.text();
+				})
+				.then(icsText => {
+					const jcalData = ICAL.parse(icsText);
+					const vcalendar = new ICAL.Component(jcalData);
+					const vevents = vcalendar.getAllSubcomponents('vevent');
+
+					const fullMoonEvents = vevents.map(vevent => {
+						const eventObj = new ICAL.Event(vevent);
+						return {
+							title: eventObj.summary,
+							start: eventObj.startDate.toString(),
+							allDay: eventObj.startDate.isDate,
+							extendedProps: { description: eventObj.description || '' },
+							color: '#FFFFFF50'
+						};
+					});
+
+					const allEvents = fullMoonEvents.concat(sabbatEvents);
+
+					const calendarEl = document.getElementById('calendar');
+					const calendar = new FullCalendar.Calendar(calendarEl, {
+						initialView: 'dayGridMonth',
+						height: 'auto',
+						themeSystem: 'standard',
+						headerToolbar: {
+							left: 'prev,next today',
+							center: 'title',
+							right: 'dayGridMonth,timeGridWeek,timeGridDay'
+						},
+						events: allEvents,
+						eventTimeFormat: { hour: '2-digit', minute: '2-digit', hour12: false },
+						eventMouseEnter: function(info) {
+							const desc = info.event.extendedProps.description;
+							if (desc) {
+								const tooltip = document.createElement('div');
+								tooltip.className = 'fc-tooltip';
+								tooltip.innerText = desc;
+								document.body.appendChild(tooltip);
+								tooltip.style.left = info.jsEvent.pageX + 10 + 'px';
+								tooltip.style.top = info.jsEvent.pageY + 10 + 'px';
+								info.el.addEventListener('mouseleave', () => tooltip.remove());
+							}
+						}
+					});
+					calendar.render();
+				})
+				.catch(err => {
+					console.error('Error loading ICS:', err);
+					document.getElementById('calendar').innerHTML = '<p>Unable to load calendar.</p>';
+				});
+
+			// 4. Monthly Quote Rotation
+			const quotesByMonth = {
+				0:  "“From the ashes of yesterday, new songs will rise.”",
+				1:  "“The heart of spring beats loudest in the circle of our song.”",
+				2:  "“Blossoms fade, but our devotion remains unwavering.”",
+				3:  "“May the fire of Beltane kindle your passion and your path.”",
+				4:  "“In the glow of midsummer, we find our inner strength.”",
+				5:  "“The longest day reminds us to embrace every ray of hope.”",
+				6:  "“Under Lughnasadh’s light, we honor the harvest of our efforts.”",
+				7:  "“Shadows lengthen as we reflect on what binds us to the earth.”",
+				8:  "“In Samhain’s whisper, we remember those who guide us beyond.”",
+				9:  "“Embers glow even when the veil grows thin.”",
+				10: "“Honoring Ancestors: their stories illuminate our way forward.”",
+				11: "“From winter’s stillness, new promise will awaken.”"
+			};
+			const now = new Date();
+			const currentQuote = quotesByMonth[now.getMonth()] ||
+			                    "“In every season, there is a song waiting to be sung.”";
+			document.getElementById('quote-text').innerText = currentQuote;
+		});
+
+		// Scroll‐fade overlay to match other pages
 		(function() {
-			var targetSection = document.getElementById("content");
+			const targetSection = document.getElementById("hero");
 			if (!targetSection) return;
-			var targetOffsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
-			var alphaMin = 0.60;
-			var alphaMax = 0.95;
-			var overlay = document.getElementById("bg-overlay");
+			const heroHeight = targetSection.getBoundingClientRect().height;
+			const overlay = document.getElementById("bg-overlay");
+			const alphaMin = 0.60;
+			const alphaMax = 0.95;
 
 			window.addEventListener("scroll", function() {
-				var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-				var ratio = scrollY / targetOffsetTop;
+				let scrollY = window.pageYOffset || document.documentElement.scrollTop;
+				let ratio = scrollY / heroHeight;
 				if (ratio < 0) ratio = 0;
 				if (ratio > 1) ratio = 1;
-				var newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
+				const newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
 				overlay.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha.toFixed(2) + ")";
 			});
 		})();
