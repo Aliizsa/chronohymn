@@ -4,129 +4,77 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 <head>
-	<title>Chronohymn – Listen</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<style>
-		/* Center the audio container and text */
-		.listen-container {
-			text-align: center;
-			padding: 4em 2em;
-		}
-		.listen-container h2 {
-			margin-bottom: 1em;
-		}
-		.audio-wrapper {
-			margin-top: 2em;
-		}
-	</style>
+  <meta charset="utf-8" />
+  <title>Chronohymn – Listen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="is-preload">
 
-	<!-- Preload overlay unchanged -->
-	<div id="bg-overlay"></div>
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
 
-	<div id="page-wrapper">
-		<header id="header" class="alt">
-			<h1>Chronohymn</h1>
-			<nav id="nav">
-				<ul>
-					<li class="special">
-						<a href="#menu" class="menuToggle"><span>Menu</span></a>
-						<div id="menu">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="music.html">Music</a></li>
-								<li class="active"><a href="listen.html">Listen</a></li>
-								<li><a href="videos.html">Videos</a></li>
-								<li><a href="lyrics.html">Lyrics</a></li>
-								<li><a href="events.html">Events</a></li>
-								<li><a href="shop.html">Shop</a></li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</div>
-					</li>
-				</ul>
-			</nav>
-		</header>
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">Chronohymn</a></h1>
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="current"><a href="listen.html">Listen</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-		<!-- Hero / Banner Section for Listen -->
-		<section id="banner">
-			<div class="inner">
-				<h2>Listen to Chronohymn</h2>
-				<p>Immerse yourself in the ritual. Your hymn awaits.</p>
-			</div>
-		</section>
+    <!-- Main -->
+    <section id="main" class="wrapper">
+      <div class="inner">
+        <header class="major">
+          <h2>Listen to Chronohymn</h2>
+          <p>Tap below or scan the QR code to open in your Spotify app</p>
+        </header>
 
-		<!-- Audio + Description Section -->
-		<section class="listen-container">
-			<h2>The Gates Are Open</h2>
-			<p>Scan the QR code on your card to arrive here. The song will play automatically. Feel the pulse of ancient rhythms.</p>
-			<div class="audio-wrapper">
-				<audio autoplay controls hidden>
-					<source src="audio/chronohymn.mp3" type="audio/mpeg">
-					Your browser does not support the audio element.
-				</audio>
-			</div>
-		</section>
+        <!-- Spotify Embed Container -->
+        <div class="embed-container" style="max-width: 700px; margin: 0 auto;">
+          <iframe
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/0mDjLqR82JMKGt0SE2P6I1?utm_source=generator&theme=0"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
 
-		<footer id="footer">
-			<ul class="icons social-links">
-				<li>
-					<a href="https://www.instagram.com/Chronohymn" target="_blank" rel="noopener">
-						<img src="images/instagram-icon.png" alt="Instagram">
-					</a>
-				</li>
-				<li>
-					<a href="https://www.facebook.com/Chronohymn" target="_blank" rel="noopener">
-						<img src="images/facebook-icon.png" alt="Facebook">
-					</a>
-				</li>
-				<li>
-					<a href="https://www.youtube.com/@Chronohymn" target="_blank" rel="noopener">
-						<img src="images/youtube-icon.png" alt="YouTube">
-					</a>
-				</li>
-				<li>
-					<a href="mailto:Chronohymn@gmail.com">
-						<img src="images/email-icon.png" alt="Email">
-					</a>
-				</li>
-			</ul>
-		</footer>
-	</div>
+        <!-- Optional: QR Code Section (uncomment if you have a QR image) -->
+        <!--
+        <div class="qr-code" style="margin-top: 2em; text-align: center;">
+          <p>Or scan this QR code to open in Spotify:</p>
+          <img src="images/spotify-qr.png" alt="QR code linking to Spotify" style="max-width: 200px;">
+        </div>
+        -->
+      </div>
+    </section>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script>
-		(function() {
-			var banner = document.getElementById("banner");
-			if (!banner) return;
-			var bannerHeight = banner.getBoundingClientRect().height;
-			var overlay = document.getElementById("bg-overlay");
-			var alphaMin = 0.60;
-			var alphaMax = 0.95;
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <p>&copy; Chronohymn. All rights reserved.</p>
+      </div>
+    </footer>
 
-			window.addEventListener("scroll", function() {
-				var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-				var ratio = scrollY / bannerHeight;
-				if (ratio < 0) ratio = 0;
-				if (ratio > 1) ratio = 1;
-				var newAlpha = alphaMin + (alphaMax - alphaMin) * ratio;
-				overlay.style.backgroundColor = "rgba(0, 0, 0, " + newAlpha.toFixed(2) + ")";
-			});
-		})();
-	</script>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
