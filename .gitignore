@@ -1,0 +1,7 @@
+# Ignore sensitive files and local clutter
+.env
+*.key
+*.pem
+node_modules/
+.DS_Store
+.vscode/
